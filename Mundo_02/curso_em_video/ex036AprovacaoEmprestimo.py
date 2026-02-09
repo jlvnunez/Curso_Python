@@ -16,3 +16,6 @@ if prestacao <= limite:
 else:
     print('\033[31mEMPRESTIMO NEGADO!!\033[m')
     print(f'O valor da parcela excede 30% do seu Salario (R$ {limite:.2f})')
+
+input('Aperte ENTER para fechar...')    
+
