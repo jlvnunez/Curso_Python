@@ -1,6 +1,9 @@
 #Exercício Python 44: Elabore um programa que calcule o valor a ser pago por um produto, considerando o seu preço normal e condição de pagamento:
 
-print('='*10, ' LOJAS GEMINI ', '='*10)
+import os
+os.system("")# Esse comando "limpa" o terminal e ativa o suporte a cores ANSI no Windows
+
+print('='*10, ' LOJAS JLVNUNEZ ', '='*10)
 preco = float(input('Preço das compras: R$ '))
 
 print('''FORMAS DE PAGAMENTO
@@ -29,3 +32,5 @@ elif opcao == 4:
     print(f'Sua compra de R${preco:.2f} vai custar R${total:.2f} no final.')
 else:
     print('\033[31mOPÇÃO INVÁLIDA de pagamento. Tente novamente!\033[m')
+
+input('Clique enter para encerrar...')

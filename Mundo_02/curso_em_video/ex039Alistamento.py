@@ -20,5 +20,7 @@ else:
 
 print('*' *42)
 
+input('Clique enter para encerrar...')
+
 
 

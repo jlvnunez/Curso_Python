@@ -1,4 +1,7 @@
 #Exercício Python 43: Desenvolva uma lógica que leia o peso e a altura de uma pessoa, calcule seu Índice de Massa Corporal (IMC) e mostre seu status, de acordo com a tabela abaixo:
+import os
+os.system("")# Esse comando "limpa" o terminal e ativa o suporte a cores ANSI no Windows
+
 print('*' *30)
 print('Calculadora IMC(Indice de Massa Corpôrea)')
 print('*' *30)
@@ -25,3 +28,5 @@ elif imc >30 and imc <= 40:
     print('Voce esta OBESO')
 else:
     print('Voce esta com OBESIDADE MÓRBIDA')
+
+input('Clique enter para encerrar...')

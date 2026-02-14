@@ -1,4 +1,6 @@
 #Exercício Python 42: Refaça o DESAFIO 35 dos triângulos, acrescentando o recurso de mostrar que tipo de triângulo será formado:
+import os
+os.system("")# Esse comando "limpa" o terminal e ativa o suporte a cores ANSI no Windows
 
 print('-=-' *15)
 print('Analisando se forma um Triangulo')
@@ -20,5 +22,7 @@ if r1+r2 > r3 and r1+r3 > r2 and r2+r3 > r1:
 
 else:
     print('Os segmentos \033[1;31mNÃO PODEM FORMAR\033[m um triângulo!')
+
+input('Clique enter para encerrar...')
 
 

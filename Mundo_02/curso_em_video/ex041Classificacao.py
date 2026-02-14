@@ -1,4 +1,6 @@
 #Exercício Python 041: A Confederação Nacional de Natação precisa de um programa que leia o ano de nascimento de um atleta e mostre sua categoria, de acordo com a idade:
+import os
+os.system("")# Esse comando "limpa" o terminal e ativa o suporte a cores ANSI no Windows
 from datetime import date
 print('-=-' *20)
 print('       CLASSIFICAÇÃO DE ATLETAS')
@@ -30,6 +32,8 @@ else:
         print('Classificação SENIOR')
      else:
         print('Classificação MASTER')
+
+input('Clique enter para encerrar...')        
 
 
     
