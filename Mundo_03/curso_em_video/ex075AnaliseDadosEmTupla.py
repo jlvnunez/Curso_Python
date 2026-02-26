@@ -3,6 +3,7 @@
 A) Quantas vezes apareceu o valor 9.
 B) Em que posição foi digitado o primeiro valor 3.
 C) Quais foram os números pares.'''
+print()
 print(f'{"Analise de dados em Tupla":=^50}')
 print('='*50)
 num = (int(input('digite o primeiro valor '))),(int(input('digite o segundo valor '))),(int(input('digite o terceiro valor '))),(int(input('digite o quarto valor ')))
@@ -14,9 +15,9 @@ if 3 in num:
 else:
     print('\033[1;31mO valor 3 nao foi digitado em nenhuma posição!\033[m')
 print(f'Os valores pares digitados foram: ',end='  ')
-for i in num:
-    if i %2==0:
-        print(i,end=' ')
+for p in num:
+    if p %2==0:
+        print(p,end=' ')
 print(f'\n{'Programa Encerrado':=^50}')
 
 
