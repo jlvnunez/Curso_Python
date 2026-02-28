@@ -2,7 +2,7 @@
 
 lista = []
 
-for _ in range(5):
+for _ in range(0,5):
     n = int(input('Digite um valor: '))
     
     # Se a lista estiver vazia ou o número for maior que o último, apenas adiciona
