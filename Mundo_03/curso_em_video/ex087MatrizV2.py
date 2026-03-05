@@ -24,7 +24,7 @@ for l in range(0,3):
 print(f'A soma dos valores da TERCEIRA COLUNA: {somaColuna}')
 for c in range(0,3):
     if c ==0:
-        maior ==matriz[l][c]
+        maior = matriz[1][c]
     elif matriz [1][c] > maior:
         maior =matriz[1][c]
 print(f'O maior Valor da SEGUNDA LINHA {maior}')    
