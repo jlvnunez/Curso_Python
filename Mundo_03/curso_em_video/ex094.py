@@ -3,15 +3,14 @@
 print(f'{"Unindo Dicionarios e Listas":=^50}')
 
 pessoa={}
-
-pessoa["nome"]=str(input("Nome "))
+pessoa['nome']= str(input("Nome "))
 while True:
-    pessoa["sexo"] = str(input("Sexo [M/F] ")).upper[0]
-    if pessoa["sexo"]in "MF":
+    pessoa['sexo'] = str(input("Sexo [M/F] ")).upper()[0]
+    if pessoa['sexo'] in "MF":
         break
     else:
-        print("digite apenas M ou F")
+        print("ERRO!Digite apenas M ou F")
+pessoa['Idade']=int(input("Idade "))
+print(pessoa)
 
-
-#pessoa["idade"]=int(input("Idade "))
 
