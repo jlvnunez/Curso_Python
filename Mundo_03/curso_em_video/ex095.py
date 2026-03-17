@@ -1,0 +1,53 @@
+#Exercício Python 095: Aprimore o desafio 93 para que ele funcione com vários jogadores, incluindo um sistema de visualização de detalhes do aproveitamento de cada jogador.
+print(f'{"Cadastro de Jogadores Versao 2.0":=^50}')
+time= list()
+jogador={}
+partidas=[]
+while True:
+    jogador.clear()
+    jogador['nome']=str(input('Nome Jogador: '))
+    tot= int(input(f'Total de partidas de {jogador['nome']} '))
+    partidas.clear()
+    for c in range (0,tot):
+        partidas.append(int(input(f' Quantos gol na partida {c+1}?: ')))
+    jogador['gols'] = partidas[:]
+    jogador['total']= sum(partidas)
+    time.append(jogador.copy())
+    resp = str(input("Quer continuar?[S/N]: ")).upper()[0]
+    while True:   
+        if resp in "SN":
+            break
+        print('ERRO!! digite S ou N')   
+    if resp in "Nn":
+        break 
+print('='*40) 
+print('cod ',end='')
+for i in jogador.keys():
+    print(f'{i:<15}',end='')
+print()
+print('=' *40)    
+for k, v in enumerate(time):
+    print(f'{k:>3} ',end='') 
+    for d in v.values():
+        print(f'{str(d):<15}',end='')
+    print()
+print('='*40)
+while True:
+    busca = int(input('Mostrar dados de qual Jogador(parar codigo 999): '))
+    if busca ==999:
+        break
+    if busca >= len(time):
+        print(f'Erro! Nao existe jogador com o codigo {busca}')
+    else:
+        print(f'levantamento do jogador {time[busca]['nome']}:')
+        for i, g in enumerate(time[busca]['gols']):
+            print(f'   No jogo {i+1} fez {g} gols')
+print('='*40)  
+print('FIM! VOLTE SEMPRE!!!')     
+
+
+
+
+
+
+
