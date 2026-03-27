@@ -15,7 +15,7 @@ arq = 'cursoemvideo.txt'
 if not arquivoExiste(arq):
     criarArquivo(arq)
 while True:
-    resposta = menu(['Ver pessoas cadastradas','Cadastrar nova pessoa','Sair do sistema'])
+    resposta = menu(['Lista de Cadastros','Incluir Pessoa','Delete Pessoa','Sair do sistema'])
     if resposta ==1:
         lerArquivo(arq)
     elif resposta ==2:
@@ -24,8 +24,12 @@ while True:
         idade=leiaInt('Idade: ')
         cadastrar(arq,nome,idade)    
     elif resposta == 3:
+        cabecalho('REMOVER REGISTRO')
+        nome = str(input('Digite o nome exato para remover: '))
+        removerRegistro(arq, nome)     
+    elif resposta == 4:
         cabecalho('SAINDO DO SISTEMA... ATÉ LOGO!!!')
-        break     
+        break
     else:
         print('\033[1;31mErro! Digite uma opcao Valida!\033[m')
     sleep(2)

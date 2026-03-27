@@ -1,5 +1,6 @@
 
 from lib.interface import *
+import os
 
 def arquivoExiste(nome):
     try: 
@@ -51,6 +52,9 @@ def cadastrar(arq,nome='desconhecido',idade=0):
         else:
             print(f'Novo registro de {nome} adicionado')
             a.close()
+
+
+
 
 
 
