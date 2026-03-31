@@ -1,0 +1,8 @@
+from altair import Title
+from rich import print
+from rich.panel import Panel
+
+caixa = Panel("[white]Esse aqui e um painel de exemplos[/]:+1:",title="Mensagem",style="red",width=35)
+print(caixa)
+
+#parei em 19minutos no youtube
