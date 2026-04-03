@@ -28,7 +28,7 @@ c1.depositar(500)
 c1.sacar(2_000_000)
 print(c1)
 
-#aula padara em 40min no youtube
+
 
 
 
