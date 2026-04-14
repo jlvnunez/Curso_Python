@@ -1,11 +1,19 @@
 from rich import print
 from rich.panel import Panel
+import subprocess
+import os
+
+
+def limpar_console():
+    # Executa o comando de limpar sem mostrar erros caso falhe
+    subprocess.run(['cls' if os.name == 'nt' else 'clear'], shell=True)
 
 class ControleRemoto:
     canal_min:int =1
     canal_max :int=5
     volume_min:int=1
     volume_max:int=5
+
 
     def __init__(self,canal=1,volume = 2):
          self.canal_atual:int = canal
@@ -64,6 +72,7 @@ class ControleRemoto:
 
 c= ControleRemoto()
 while True:
+    limpar_console()
     c.mostrar_tv()
     comando = str(input(f"< CH{c.canal_atual} > -VOL{c.volume_atual} + "))
     match comando:
@@ -80,6 +89,6 @@ while True:
         case '+':
             c.volume_mais()
 
-    print("\n" *20)
+    #print("\n" *10)
 
 

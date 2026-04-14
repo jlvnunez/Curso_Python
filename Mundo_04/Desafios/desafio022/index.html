@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle Remoto TV</title>
+    <style>
+        body { background: #1a1a1a; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+        .tv { width: 300px; height: 200px; background: #000; border: 10px solid #333; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 10px; }
+        .on { border-color: #444; box-shadow: 0 0 20px #00ffcc; color: #00ffcc; }
+        .off { color: #400; }
+        .controls { margin-top: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        button { padding: 10px; cursor: pointer; background: #444; color: white; border: none; border-radius: 5px; }
+        .power { background: #a00; grid-column: span 3; }
+    </style>
+</head>
+<body>
+
+    <div id="screen" class="tv off">
+        <h2 id="statusText">TV DESLIGADA</h2>
+        <div id="volDisplay"></div>
+    </div>
+
+    <div class="controls">
+        <button class="power" onclick="togglePower()">LIGAR / DESLIGAR</button>
+        <button onclick="changeChannel(-1)">CH -</button>
+        <div style="text-align: center">TV</div>
+        <button onclick="changeChannel(1)">CH +</button>
+        <button onclick="changeVolume(-1)">VOL -</button>
+        <div></div>
+        <button onclick="changeVolume(1)">VOL +</button>
+    </div>
+
+    <script>
+        // A lógica que estava no app.py agora está aqui em JavaScript
+        let tv = { ligado: false, canal: 1, volume: 2 };
+
+        function updateUI() {
+            const screen = document.getElementById('screen');
+            const status = document.getElementById('statusText');
+            const vol = document.getElementById('volDisplay');
+
+            if (!tv.ligado) {
+                screen.className = "tv off";
+                status.innerText = "TV DESLIGADA";
+                vol.innerText = "";
+            } else {
+                screen.className = "tv on";
+                status.innerText = "CANAL " + tv.canal;
+                vol.innerText = "VOL: " + "█".repeat(tv.volume) + "░".repeat(5 - tv.volume);
+            }
+        }
+
+        function togglePower() { tv.ligado = !tv.ligado; updateUI(); }
+        function changeChannel(val) {
+            if (tv.ligado) {
+                tv.canal += val;
+                if (tv.canal > 5) tv.canal = 1;
+                if (tv.canal < 1) tv.canal = 5;
+                updateUI();
+            }
+        }
+        function changeVolume(val) {
+            if (tv.ligado) {
+                tv.volume = Math.max(1, Math.min(5, tv.volume + val));
+                updateUI();
+            }
+        }
+    </script>
+</body>
+</html>
