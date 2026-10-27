@@ -24,7 +24,7 @@ class ContaBancaria:
             print(f'Saque de R$ {valor:,.2f} autorizado na conta {self.id}')
 #print(c1.__doc__)
 c1 =ContaBancaria(112,"Gustavo",3000)
-c1.depositar(500)
+c1.depositar(2500)
 c1.sacar(2_000_000)
 print(c1)
 
