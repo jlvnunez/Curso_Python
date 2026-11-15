@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
-
+from rich.panel import Panel
+from rich import print
 class Funcionario(ABC):
     salario_minimo = 1612
     desconto_inss = 7.5
@@ -14,7 +15,8 @@ class Funcionario(ABC):
         pass
 
     def analisar_salario(self):
-        pass
+         painel = Panel(f"O salario de {self.nome} é de R${self.salario:.2f} e corresponde a {self.salario/self.salario_minimo:.2f} salários minimos", title="Analise do Salario", width=60, subtitle="Sistema de Analise de Salarios")
+         print(painel)
              
 
 class Funcionario_Horista(Funcionario):
