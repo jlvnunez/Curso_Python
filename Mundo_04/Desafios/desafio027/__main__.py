@@ -1,7 +1,6 @@
 from personagem_rpg import *
 from rich import inspect
 
-
 def main():
     p1 =Guerreiro("Pikachu",1000)
     #p1.receber_dano(100)
